@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/mson-playground/static/js/runtime~main.a541b3bb.js"
   },
   {
-    "revision": "c3e77e3328163ddf01fa",
-    "url": "/mson-playground/static/js/main.32878340.chunk.js"
+    "revision": "c822cf61113842ddb490",
+    "url": "/mson-playground/static/js/main.237f825a.chunk.js"
   },
   {
     "revision": "1c3e32f8d1fba87a2a5c",
     "url": "/mson-playground/static/js/2.2041a134.chunk.js"
   },
   {
-    "revision": "c3e77e3328163ddf01fa",
+    "revision": "c822cf61113842ddb490",
     "url": "/mson-playground/static/css/main.b775ae5d.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/mson-playground/static/css/2.1cf30d38.chunk.css"
   },
   {
-    "revision": "2864b41a758ea9f6a93c9233d567b74d",
+    "revision": "e08c2f2547ead4d2836958f102f8e151",
     "url": "/mson-playground/index.html"
   }
 ];

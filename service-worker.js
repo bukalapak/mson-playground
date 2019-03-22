@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/mson-playground/precache-manifest.27cfbbd8e31cbd3a6ef0f1127e683430.js"
+  "/mson-playground/precache-manifest.94e30136dd0508c30f63b0227e15213e.js"
 );
 
 workbox.clientsClaim();
