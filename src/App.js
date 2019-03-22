@@ -75,7 +75,7 @@ const Result = ({ source }) => {
   }, [source]);
 
   return (
-    <Box mr={4}>
+    <Box mr={[1, 4]}>
       <ResultRender data={data} />
     </Box>
   );
@@ -149,7 +149,7 @@ const App = () => {
         </Accordion>
       </Box>
       <Box width={[1, 1 / 2, 3 / 5]} px={2}>
-        <Heading textAlign="center">
+        <Heading textAlign="center" m={[3, 1]}>
           <Link href="https://github.com/apiaryio/mson" color="white">
             MSON
           </Link>{" "}
