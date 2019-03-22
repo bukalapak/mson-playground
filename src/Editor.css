@@ -1,0 +1,8 @@
+@import "~prism-themes/themes/prism-hopscotch.css";
+
+.react-simple-code-editor {
+  font-size: 14px;
+  font-variant-ligatures: common-ligatures;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+}
