@@ -6,10 +6,11 @@ import GithubCorner from "react-github-corner";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Accordion, AccordionItem } from "react-sanfona";
 import useWindowSize from "@rehooks/window-size";
+import Dropdown from "react-dropdown";
 
 import Editor from "./Editor";
 import { toSource, bodySchema } from "./parser";
-import seeds from "./seed";
+import seeds, { seedLabels } from "./seed";
 import "./App.css";
 
 const JSONTree = ({ source, displayDataTypes = false }) => (
@@ -81,9 +82,9 @@ const Result = ({ source }) => {
   );
 };
 
-const tplSource = toSource({
-  dataStructure: seeds[0].dataStructure,
-  mson: seeds[0].mson
+const tplSource = (index) => toSource({
+  dataStructure: seeds[index].dataStructure,
+  mson: seeds[index].mson
 });
 
 const toHeight = (height, count) => {
@@ -97,9 +98,10 @@ const toHeight = (height, count) => {
 const App = () => {
   const { innerHeight } = useWindowSize();
 
-  const [dataStructure, setDataStructure] = useState(seeds[0].dataStructure);
-  const [mson, setMson] = useState(seeds[0].mson);
-  const [source, setSource] = useState(tplSource);
+  const [index, setIndex] = useState(0);
+  const [dataStructure, setDataStructure] = useState(seeds[index].dataStructure);
+  const [mson, setMson] = useState(seeds[index].mson);
+  const [source, setSource] = useState(tplSource(index));
   const [count, setCount] = useState(2);
 
   const [sourceCallback] = useDebouncedCallback(
@@ -111,6 +113,13 @@ const App = () => {
     [dataStructure, mson]
   );
 
+  const onChange = index => {
+    setIndex(index);
+    setDataStructure(seeds[index].dataStructure);
+    setMson(seeds[index].mson);
+    setSource(tplSource(index));
+  };
+
   useEffect(() => {
     sourceCallback(dataStructure, mson);
   });
@@ -121,6 +130,11 @@ const App = () => {
   return (
     <Flex flexWrap="wrap" px={2} py={3}>
       <Box width={[1, 1 / 2, 2 / 5]} px={3}>
+        <Dropdown
+          options={seedLabels}
+          value={seedLabels[index]}
+          onChange={({ value }) => onChange(value)}
+        />
         <Accordion allowMultiple={true} duration={0}>
           <AccordionItem
             title="Data Structures"

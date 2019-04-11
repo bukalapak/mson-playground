@@ -1,5 +1,5 @@
 const seed01 = {
-  label: "seed-01",
+  label: "Example #1",
   dataStructure: `
 ## Person A
 
@@ -23,6 +23,20 @@ const seed01 = {
   `
 };
 
-const seeds = [seed01];
+const seed02 = {
+  label: "Example #2",
+  dataStructure: ``,
+  mson: `
++ say (object, required)
+  + hello: \`world!\` (string, required)
+  `
+};
+
+const seeds = [seed01, seed02];
+
+export const seedLabels = seeds.map((seed, index) => ({
+  label: seed.label,
+  value: index,
+}));
 
 export default seeds;
