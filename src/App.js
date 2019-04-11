@@ -82,10 +82,11 @@ const Result = ({ source }) => {
   );
 };
 
-const tplSource = (index) => toSource({
-  dataStructure: seeds[index].dataStructure,
-  mson: seeds[index].mson
-});
+const tplSource = index =>
+  toSource({
+    dataStructure: seeds[index].dataStructure,
+    mson: seeds[index].mson
+  });
 
 const toHeight = (height, count) => {
   const divider = 120;
@@ -99,7 +100,9 @@ const App = () => {
   const { innerHeight } = useWindowSize();
 
   const [index, setIndex] = useState(0);
-  const [dataStructure, setDataStructure] = useState(seeds[index].dataStructure);
+  const [dataStructure, setDataStructure] = useState(
+    seeds[index].dataStructure
+  );
   const [mson, setMson] = useState(seeds[index].mson);
   const [source, setSource] = useState(tplSource(index));
   const [count, setCount] = useState(2);

@@ -36,7 +36,7 @@ const seeds = [seed01, seed02];
 
 export const seedLabels = seeds.map((seed, index) => ({
   label: seed.label,
-  value: index,
+  value: index
 }));
 
 export default seeds;
