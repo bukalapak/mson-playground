@@ -17,6 +17,7 @@
     "react": "^16.8.4",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.8.4",
+    "react-dropdown": "^1.6.4",
     "react-github-corner": "^2.3.0",
     "react-json-view": "^1.19.1",
     "react-sanfona": "^1.4.0",
