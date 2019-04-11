@@ -109,7 +109,7 @@ const App = () => {
       const value = toSource({ dataStructure, mson });
       setSource(value);
     },
-    1000,
+    500,
     [dataStructure, mson]
   );
 
