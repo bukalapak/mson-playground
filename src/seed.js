@@ -32,7 +32,25 @@ const seed02 = {
   `
 };
 
-const seeds = [seed01, seed02];
+const seed03 = {
+  label: "Example #3",
+  dataStructure: `
+# Address (object)
+
+Description is here! Properties to follow.
+
+## Properties
+
+- street
+- state
+- zip
+  `,
+  mson: `
+- address (Address)
+  `
+};
+
+const seeds = [seed01, seed02, seed03];
 
 export const seedLabels = seeds.map((seed, index) => ({
   label: seed.label,
