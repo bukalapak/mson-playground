@@ -8,8 +8,8 @@
   "author": "Alif Rachmawadi <subosito@bukalapak.com>",
   "dependencies": {
     "@rehooks/window-size": "^1.0.2",
-    "drafter.js": "^3.0.0-pre.2",
-    "minim": "^0.23.2",
+    "drafter.js": "^3.0.0-pre.3",
+    "minim": "^0.23.3",
     "minim-api-description": "^0.9.0",
     "minim-parse-result": "^0.11.0",
     "prism-themes": "^1.0.1",
@@ -28,7 +28,7 @@
     "rebass": "^3.0.1",
     "sanitize.css": "^8.0.0",
     "styled-components": "^4.1.3",
-    "use-debounce": "^1.1.1"
+    "use-debounce": "^1.1.2"
   },
   "scripts": {
     "fmt": "prettier --write 'src/**/*.js' 'src/**/*.css'",
@@ -48,6 +48,6 @@
   ],
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "prettier": "1.16.4"
+    "prettier": "1.17.0"
   }
 }
