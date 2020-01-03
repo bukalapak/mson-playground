@@ -7,11 +7,17 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Accordion, AccordionItem } from "react-sanfona";
 import useWindowSize from "@rehooks/window-size";
 import Dropdown from "react-dropdown";
+import ReactGA from "react-ga";
 
 import Editor from "./Editor";
 import { toSource, bodySchema } from "./parser";
 import seeds, { seedLabels } from "./seed";
 import "./App.css";
+
+const trackingID = "UA-155250238-1";
+
+ReactGA.initialize(trackingID, { debug: true });
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const JSONTree = ({ source, displayDataTypes = false }) => (
   <ReactJson
@@ -103,6 +109,7 @@ const App = () => {
   const [dataStructure, setDataStructure] = useState(
     seeds[index].dataStructure
   );
+
   const [mson, setMson] = useState(seeds[index].mson);
   const [source, setSource] = useState(tplSource(index));
   const [count, setCount] = useState(2);
@@ -111,6 +118,11 @@ const App = () => {
     (dataStructure, mson) => {
       const value = toSource({ dataStructure, mson });
       setSource(value);
+
+      ReactGA.event({
+        category: "Edit MSON",
+        action: "User edited MSON code in code editor"
+      });
     },
     500,
     [dataStructure, mson]
