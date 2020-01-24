@@ -7,17 +7,16 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Accordion, AccordionItem } from "react-sanfona";
 import useWindowSize from "@rehooks/window-size";
 import Dropdown from "react-dropdown";
-import ReactGA from "react-ga";
+import * as Fathom from "fathom-client";
 
 import Editor from "./Editor";
 import { toSource, bodySchema } from "./parser";
 import seeds, { seedLabels } from "./seed";
 import "./App.css";
 
-const trackingID = "UA-155250238-1";
-
-ReactGA.initialize(trackingID, { debug: true });
-ReactGA.pageview(window.location.pathname + window.location.search);
+Fathom.load();
+Fathom.setSiteId("NEFQHNEV");
+Fathom.trackPageview();
 
 const JSONTree = ({ source, displayDataTypes = false }) => (
   <ReactJson
@@ -118,11 +117,7 @@ const App = () => {
     (dataStructure, mson) => {
       const value = toSource({ dataStructure, mson });
       setSource(value);
-
-      ReactGA.event({
-        category: "Edit MSON",
-        action: "User edited MSON code in code editor"
-      });
+      Fathom.trackGoal("BZLUIGEA", 0);
     },
     500,
     [dataStructure, mson]

@@ -9,6 +9,7 @@
   "dependencies": {
     "@rehooks/window-size": "^1.0.2",
     "drafter.js": "^3.0.0-pre.3",
+    "fathom-client": "^2.0.2",
     "minim": "^0.23.3",
     "minim-api-description": "^0.9.0",
     "minim-parse-result": "^0.11.0",
@@ -18,7 +19,6 @@
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.8.4",
     "react-dropdown": "^1.6.4",
-    "react-ga": "^2.7.0",
     "react-github-corner": "^2.3.0",
     "react-json-view": "^1.19.1",
     "react-sanfona": "^1.4.0",
